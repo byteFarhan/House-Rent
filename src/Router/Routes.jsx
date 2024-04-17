@@ -1,22 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../Layout/MainLayout/MainLayout";
+import Home from "../Pages/HomePage/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <p className="text-lg font-semibold text-red-500">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
-          mollitia officiis quod optio animi! Libero quam maxime excepturi iusto
-          totam? Similique laborum sint, repudiandae asperiores odio excepturi
-          quidem nihil et.
-        </p>
-      </div>
+    element: <MainLayout />,
+    errorElement: (
+      <div className="text-5xl font-bold text-center">Error 404</div>
     ),
     children: [
       {
         path: "/",
-        element: <div></div>,
+        element: <Home />,
       },
     ],
   },
