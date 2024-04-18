@@ -1,7 +1,10 @@
+import Carousel from "../Carousel/Carousel";
+
 const Home = () => {
   return (
     <>
       <section>
+        <Carousel />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed fuga
           dolor quae repudiandae modi, corporis cupiditate ullam nam, nostrum

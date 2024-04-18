@@ -3,3 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-base {
+    @apply py-2 text-base font-bold text-white capitalize transition-all duration-75 rounded-full lg:text-lg hover:bg-green hover:border-green font-poppins;
+  }
+  .btn-primary {
+    @apply px-4 md:px-5 lg:px-6 bg-primary border-primary;
+  }
+}

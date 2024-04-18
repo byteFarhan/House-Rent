@@ -1,0 +1,14 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fca22a;
+  /* background-color: #fca22a;
+  padding: 20px;
+  border-radius: 999px;
+  font-size: 10px; */
+}
+/* .swiper-pagination-bullet {
+  background-color: #b3b3b3;
+} */
+.swiper-pagination-bullet-active {
+  background-color: #fca22a;
+}

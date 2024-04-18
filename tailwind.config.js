@@ -22,7 +22,7 @@ export default {
         title: "#de385d",
         natural: "#0e385d",
         navy: "#0e385d",
-        green: "#b3b3b3",
+        green: "#21b360",
       },
     },
   },
