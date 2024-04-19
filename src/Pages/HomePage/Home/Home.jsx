@@ -1,3 +1,4 @@
+import Apartments from "../Apartments/Apartments";
 import Carousel from "../Carousel/Carousel";
 
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
     <>
       <section>
         <Carousel />
+        <Apartments />
       </section>
     </>
   );
