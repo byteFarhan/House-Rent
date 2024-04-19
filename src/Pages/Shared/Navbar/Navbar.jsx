@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 import avtr from "../../../assets/house-logo.png";
 
 const Navbar = () => {
@@ -18,17 +19,17 @@ const Navbar = () => {
   );
   return (
     <>
-      <nav className="bg-base-300">
+      <nav className="bg-[#1C1C1C]">
         <div className="drawer">
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
           <div className="flex flex-col drawer-content">
             {/* Navbar */}
-            <div className="container flex-row-reverse justify-between w-full navbar lg:flex-row ">
+            <div className="container justify-between w-full navbar lg:flex-row ">
               <div className="flex-none lg:hidden">
                 <label
                   htmlFor="my-drawer-3"
                   aria-label="open sidebar"
-                  className="text-white btn btn-square bg-navy swap swap-rotate"
+                  className="text-white border-none btn btn-square bg-navy swap swap-rotate"
                 >
                   {/* this hidden checkbox controls the state */}
                   {/* <input
@@ -72,7 +73,10 @@ const Navbar = () => {
                   </svg>
                 </label>
               </div>
-              <div className="px-2 mx-2">Navbar Title</div>
+              <div className="px-2 mx-2">
+                <img src={logo} alt="" className="h-10 md:h-auto" />
+              </div>
+
               <div className="flex-1 hidden lg:justify-center lg:flex">
                 <ul className="menu menu-horizontal">
                   {/* Navbar menu content here */}
@@ -81,22 +85,29 @@ const Navbar = () => {
               </div>
               <div>
                 {user ? (
-                  <div
-                    className="text-white tooltip tooltip-bottom tooltip-success"
-                    data-tip="hello"
-                  >
-                    <img
-                      src={avtr}
-                      alt=""
-                      className="object-cover border-2 rounded-full size-12 lg:size-14 border-primary"
-                    />
+                  <div className="dropdown dropdown-bottom dropdown-end">
+                    <div tabIndex={0} role="button" className="">
+                      <div className="avatar online">
+                        <div className="w-10 rounded-full">
+                          <img src={avtr} />
+                        </div>
+                      </div>
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content z-[3] menu p-2 shadow bg-base-100 rounded-box w-52"
+                    >
+                      <li>
+                        <a>Item 1</a>
+                      </li>
+                      <li>
+                        <a>Item 2</a>
+                      </li>
+                    </ul>
                   </div>
                 ) : (
-                  <div>
-                    <button className="btn">Logout</button>
-                  </div>
+                  <button className="btn">Login</button>
                 )}
-                <button></button>
               </div>
             </div>
             {/* Page content here */}

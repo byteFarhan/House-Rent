@@ -11,4 +11,11 @@
   .btn-primary {
     @apply px-4 md:px-5 lg:px-6 bg-primary border-primary;
   }
+  .btn-navy {
+    @apply bg-navy px-4 lg:px-5;
+  }
+}
+
+body {
+  background-color: #f7f7f7;
 }

@@ -19,7 +19,7 @@ export default {
       },
       colors: {
         primary: "#FCA22A",
-        title: "#de385d",
+        // title: "#0e385d",
         natural: "#0e385d",
         navy: "#0e385d",
         green: "#21b360",

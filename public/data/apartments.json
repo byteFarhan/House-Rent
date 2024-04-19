@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Cozy Suburban Home",
+    "segment_name": "Residential",
+    "description": "A charming suburban home perfect for families, featuring a spacious backyard and modern amenities.",
+    "price": "$400,000",
+    "status": "sale",
+    "area": "2200 sq ft",
+    "location": "Suburbia, USA",
+    "facilities": ["living room", "backyard", "garage", "modern kitchen"],
+    "bathrooms": 2,
+    "bedrooms": 3,
+    "image": "https://i.postimg.cc/dVFTVd6q/apartment-single.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Quaint Townhouse",
+    "segment_name": "Residential",
+    "description": "Enjoy townhouse living in this quaint property located in a peaceful neighborhood.",
+    "price": "$250,000",
+    "status": "sale",
+    "area": "1600 sq ft",
+    "location": "Small Town, USA",
+    "facilities": [
+      "living room",
+      "patio",
+      "attached garage",
+      "spacious bedrooms"
+    ],
+    "bathrooms": 1.5,
+    "bedrooms": 2,
+    "image": "https://i.postimg.cc/g2KLXJt3/apartment-two.png"
+  },
+  {
+    "id": 3,
+    "estate_title": "Family-Friendly House with Garden",
+    "segment_name": "Residential",
+    "description": "Ideal for families, this house offers ample space indoors and a beautiful garden for outdoor enjoyment.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Suburbia, USA",
+    "facilities": ["living room", "garden", "modern kitchen", "playroom"],
+    "bathrooms": 2.5,
+    "bedrooms": 4,
+    "image": "https://i.postimg.cc/L5ZmzCHr/apartment-single-1.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Classic Ranch-style Home",
+    "segment_name": "Residential",
+    "description": "Experience classic American living in this ranch-style home with a spacious layout and traditional charm.",
+    "price": "$300,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "Rural Area, USA",
+    "facilities": ["living room", "backyard", "attached garage", "fireplace"],
+    "bathrooms": 2,
+    "bedrooms": 3,
+    "image": "https://i.postimg.cc/pVgF33n5/apartment-four.png"
+  },
+  {
+    "id": 5,
+    "estate_title": "Suburban Family Home with Pool",
+    "segment_name": "Residential",
+    "description": "Perfect for families who love to entertain, this suburban home features a pool and spacious outdoor area.",
+    "price": "$450,000",
+    "status": "sale",
+    "area": "2400 sq ft",
+    "location": "Suburbia, USA",
+    "facilities": ["living room", "swimming pool", "modern kitchen", "patio"],
+    "bathrooms": 3,
+    "bedrooms": 5,
+    "image": "https://i.postimg.cc/yW4snmxW/apartment-five.png"
+  },
+  {
+    "id": 6,
+    "estate_title": "Cottage-style Home in the Woods",
+    "segment_name": "Residential",
+    "description": "Escape to nature in this charming cottage-style home surrounded by trees and tranquility.",
+    "price": "$280,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "Forest, USA",
+    "facilities": ["living room", "porch", "wood stove", "secluded location"],
+    "bathrooms": 1,
+    "bedrooms": 2,
+    "image": "https://i.postimg.cc/G3BD7b91/apartment-six.png"
+  }
+]
