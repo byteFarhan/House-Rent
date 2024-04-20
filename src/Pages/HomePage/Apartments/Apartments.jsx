@@ -8,10 +8,10 @@ const Apartments = () => {
       .then((res) => res.json())
       .then((data) => setApartments(data));
   }, []);
-  console.log(apartments);
+  // console.log(apartments);
   return (
     <>
-      <section className="my-20">
+      <section className="my-20 max-w-[1280px] mx-auto">
         <div className="mb-12 text-center text-navy">
           <h2 className="text-3xl font-bold leading-normal md:text-4xl lg:text-6xl font-playfair-display">
             Rooms & Apartments

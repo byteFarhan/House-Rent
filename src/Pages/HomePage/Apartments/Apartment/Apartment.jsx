@@ -15,8 +15,8 @@ const Apartment = ({ apartment }) => {
             className="h-[300px] w-full object-cover rounded-md"
           />
         </figure>
-        <div className="p-5 lg:p-6 border border-[#E4E4E4]">
-          <div className="space-y-4">
+        <div className="p-5 lg:p-6 border border-[#E4E4E4] flex flex-col">
+          <div className="flex-grow space-y-4">
             <h3 className="text-lg inline-block md:text-xl font-bold text-[#292928] hover:text-green transition-all duration-75">
               {estate_title}
             </h3>

@@ -24,7 +24,7 @@ const Navbar = () => {
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
           <div className="flex flex-col drawer-content">
             {/* Navbar */}
-            <div className="container justify-between w-full navbar lg:flex-row ">
+            <div className="max-w-[1280px] mx-auto justify-between w-full navbar lg:flex-row ">
               <div className="flex-none lg:hidden">
                 <label
                   htmlFor="my-drawer-3"
