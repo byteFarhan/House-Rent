@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const authInfo = { loading, user, createUserWithEmail };
+  const authInfo = { loading, user, createUserWithEmail, signInWithEmail };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

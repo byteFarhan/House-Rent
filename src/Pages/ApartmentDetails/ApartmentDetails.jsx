@@ -6,8 +6,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 const ApartmentDetails = () => {
   const apartments = useLoaderData();
   const id = useParams();
-  console.log(id);
-  console.log(apartments);
+  // console.log(id);
+  // console.log(apartments);
   const theApartment = apartments.find((apartment) => apartment.id == id.id);
   //   console.log(theApartment);
   const {
