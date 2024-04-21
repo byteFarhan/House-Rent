@@ -40,7 +40,7 @@ const ApartmentDetails = () => {
                 {facilities?.map((facility, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center gap-2 text-lg font-medium text-navy"
+                    className="flex items-center gap-2 text-lg font-medium capitalize text-navy"
                   >
                     <GiPentarrowsTornado /> {facility}
                   </li>
@@ -55,7 +55,7 @@ const ApartmentDetails = () => {
               </p>
             </div>
             <div className="flex gap-6">
-              <p className="text-xl font-semibold">{status}</p>
+              <p className="text-xl font-semibold">Status- {status}</p>
               <p className="text-xl font-semibold">{price}</p>
             </div>
           </div>

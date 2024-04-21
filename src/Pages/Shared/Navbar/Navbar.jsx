@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import avtr from "../../../assets/house-logo.png";
 
@@ -73,9 +73,9 @@ const Navbar = () => {
                   </svg>
                 </label>
               </div>
-              <div className="px-2 mx-2">
+              <Link to={"/"} className="px-2 mx-2">
                 <img src={logo} alt="" className="h-10 md:h-auto" />
-              </div>
+              </Link>
 
               <div className="flex-1 hidden lg:justify-center lg:flex">
                 <ul className="menu menu-horizontal">
