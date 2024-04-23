@@ -2,6 +2,9 @@ import { Helmet } from "react-helmet";
 import { FaLocationDot } from "react-icons/fa6";
 import { GiPentarrowsTornado } from "react-icons/gi";
 import { useLoaderData, useParams } from "react-router-dom";
+// import Aos from "aos";
+// import "aos/dist/aos.css";
+// import { useEffect } from "react";
 // import DetailsCarousel from "./DetailsCarousel/DetailsCarousel";
 
 const ApartmentDetails = () => {
@@ -24,7 +27,10 @@ const ApartmentDetails = () => {
   } = theApartment;
   return (
     <>
-      <section className="grid grid-cols-1 container max-w-[1280px] mx-auto lg:grid-cols-3 gap-6 my-8 lg:my-12">
+      <section
+        data-aos="zoom-in-left"
+        className="grid grid-cols-1 container max-w-[1280px] mx-auto lg:grid-cols-3 gap-6 my-8 lg:my-12"
+      >
         <Helmet>
           <title>House Rent | Apartment {id.id}</title>
         </Helmet>

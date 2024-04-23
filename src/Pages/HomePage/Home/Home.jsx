@@ -10,6 +10,7 @@ const Home = () => {
           <title>House Rent | Home</title>
         </Helmet>
         <Carousel />
+
         <Apartments />
       </section>
     </>
