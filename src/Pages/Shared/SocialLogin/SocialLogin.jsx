@@ -5,9 +5,23 @@ import { useNavigate } from "react-router-dom";
 // import googleLogo from "../../../assets/google-logo.png";
 const SocialLogin = () => {
   const navigate = useNavigate();
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, signInWithGithub } = useAuth();
   const handleGoogleSignIn = () => {
     signInWithGoogle()
+      .then(() => {
+        swal("Login successfull.", {
+          button: false,
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        swal(error.message, {
+          button: false,
+        });
+      });
+  };
+  const handleGithubSignIn = () => {
+    signInWithGithub()
       .then(() => {
         swal("Login successfull.", {
           button: false,
@@ -29,7 +43,10 @@ const SocialLogin = () => {
       >
         <FaGoogle /> Continue With
       </button>
-      <button className="flex items-center justify-center w-full gap-2 text-xl btn-base btn-primary">
+      <button
+        onClick={handleGithubSignIn}
+        className="flex items-center justify-center w-full gap-2 text-xl btn-base btn-primary"
+      >
         <FaGithub />
         Continue With
       </button>
