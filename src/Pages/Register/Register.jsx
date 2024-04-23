@@ -1,4 +1,4 @@
-import { AiFillEyeInvisible, AiFillEye, AiOutlineGoogle } from "react-icons/ai";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 // import { useContext, useState } from "react";
 import swal from "sweetalert";
@@ -15,7 +15,7 @@ const Register = () => {
   const navigate = useNavigate();
   const {
     createUserWithEmail,
-    signInWithGoogle,
+
     // updateUserProfile,
   } = useAuth();
   // console.log(createUserWithEmail);
@@ -65,20 +65,7 @@ const Register = () => {
         setError(error.message);
       });
   };
-  const handleGoogleLogin = () => {
-    signInWithGoogle()
-      .then(() => {
-        swal("Login successfull.", {
-          button: false,
-        });
-        navigate("/");
-      })
-      .catch((error) => {
-        swal(error.message, {
-          button: false,
-        });
-      });
-  };
+
   return (
     <div>
       <div className="py-6 lg:bg-[#F3F3F3] px-5 md:px-0 font-work-sans">
@@ -89,7 +76,7 @@ const Register = () => {
               Register your account
             </h3>
             <hr className="w-5/6 mx-auto mt-10" />
-            <form onSubmit={handleRegistation} className="card-body">
+            <form onSubmit={handleRegistation} className="pb-0 card-body">
               <div className=" form-control">
                 <label className="label">
                   <span className="label-text">Your Name</span>
@@ -168,6 +155,8 @@ const Register = () => {
                   Register
                 </button>
               </div>
+            </form>
+            <div className="px-5 pb-5">
               <SocialLogin />
               <p className="my-3 text-center">
                 Already have an account?{" "}
@@ -175,7 +164,9 @@ const Register = () => {
                   Login
                 </Link>
               </p>
-            </form>
+            </div>
+
+            {/* </form> */}
           </div>
         </div>
       </div>

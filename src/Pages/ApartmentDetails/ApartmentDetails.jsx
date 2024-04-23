@@ -85,7 +85,7 @@ const ApartmentDetails = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="Phone Numbers"
+                  placeholder="+88 01xxxxxxxxx"
                   className="input input-bordered"
                   required
                 />
