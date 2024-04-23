@@ -2,9 +2,26 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import avtr from "../../../assets/house-logo.png";
 import useAuth from "../../../hooks/useAuth";
+import { IoExitOutline } from "react-icons/io5";
+import swal from "sweetalert";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, userSignOut } = useAuth();
+  const handleLogout = () => {
+    userSignOut()
+      .then(() => {
+        // Sign-out successful.
+        swal("Logout successfull.", {
+          button: false,
+        });
+      })
+      .catch((error) => {
+        // An error happened.
+        swal(error.message, {
+          button: false,
+        });
+      });
+  };
 
   const navItems = (
     <>
@@ -106,12 +123,20 @@ const Navbar = () => {
                         <p>{user?.displayName}</p>
                       </li>
                       <li>
-                        <a>Item 2</a>
+                        <button
+                          onClick={handleLogout}
+                          className="flex items-center gap-2 btn-base btn-navy"
+                        >
+                          Logout
+                          <IoExitOutline />
+                        </button>
                       </li>
                     </ul>
                   </div>
                 ) : (
-                  <button className="btn">Login</button>
+                  <Link to={"/login"} className="btn-base btn-primary">
+                    Login
+                  </Link>
                 )}
               </div>
             </div>
