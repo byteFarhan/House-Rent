@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { FaLocationDot } from "react-icons/fa6";
 import { GiPentarrowsTornado } from "react-icons/gi";
 import { useLoaderData, useParams } from "react-router-dom";
@@ -24,6 +25,9 @@ const ApartmentDetails = () => {
   return (
     <>
       <section className="grid grid-cols-1 container max-w-[1280px] mx-auto lg:grid-cols-3 gap-6 my-8 lg:my-12">
+        <Helmet>
+          <title>House Rent | Apartment {id.id}</title>
+        </Helmet>
         <div className="lg:col-span-2">
           <img src={image} alt="" className="object-cover w-full rounded-md" />
           <div className="my-6">

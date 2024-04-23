@@ -7,6 +7,7 @@ import useAuth from "../../hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -67,7 +68,10 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <section>
+      <Helmet>
+        <title>House Rent | Register</title>
+      </Helmet>
       <div className="py-6 lg:bg-[#F3F3F3] px-5 md:px-0 font-work-sans">
         <div className="max-w-[1400px] mx-auto"></div>
         <div className="min-h-[87vh] hero ">
@@ -170,7 +174,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

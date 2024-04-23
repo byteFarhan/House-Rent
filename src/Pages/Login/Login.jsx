@@ -4,6 +4,7 @@ import swal from "sweetalert";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,7 +37,10 @@ const Login = () => {
       });
   };
   return (
-    <div>
+    <section>
+      <Helmet>
+        <title>House Rent | Login</title>
+      </Helmet>
       <div className="py-6 px-5 md:px-0 lg:bg-[#F3F3F3]">
         <div className="max-w-[1400px] mx-auto"></div>
         <div className="min-h-[87vh] hero ">
@@ -102,7 +106,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
