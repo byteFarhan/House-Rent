@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import avtr from "../../../assets/house-logo.png";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
-  const user = true;
+  const { user } = useAuth();
+
   const navItems = (
     <>
       <li>
@@ -85,7 +87,10 @@ const Navbar = () => {
               </div>
               <div>
                 {user ? (
-                  <div className="dropdown dropdown-bottom dropdown-end">
+                  <div
+                    className="z-20 dropdown dropdown-bottom dropdown-end lg:tooltip lg:tooltip-bottom"
+                    data-tip={user?.displayName}
+                  >
                     <div tabIndex={0} role="button" className="">
                       <div className="avatar online">
                         <div className="w-10 rounded-full">
@@ -97,8 +102,8 @@ const Navbar = () => {
                       tabIndex={0}
                       className="dropdown-content z-[3] menu p-2 shadow bg-base-100 rounded-box w-52"
                     >
-                      <li>
-                        <a>Item 1</a>
+                      <li className="block lg:hidden">
+                        <p>{user?.displayName}</p>
                       </li>
                       <li>
                         <a>Item 2</a>

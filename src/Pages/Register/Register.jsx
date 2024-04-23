@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 // import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,7 +18,7 @@ const Register = () => {
     signInWithGoogle,
     // updateUserProfile,
   } = useAuth();
-  console.log(createUserWithEmail);
+  // console.log(createUserWithEmail);
   const handleRegistation = (e) => {
     e.preventDefault();
     setSuccess("");
@@ -163,11 +164,11 @@ const Register = () => {
               {success && <p className="text-sm text-gray-700">{success}</p>}
               {error && <p className="text-sm text-red-700">{error}</p>}
               <div className="mt-2 form-control">
-                <button className="text-white bg-navy btn hover:bg-navy">
+                <button className="text-white bg-navy btn hover:bg-green">
                   Register
                 </button>
               </div>
-
+              <SocialLogin />
               <p className="my-3 text-center">
                 Already have an account?{" "}
                 <Link to={"/login"} className="text-pink-600 hover:underline">
