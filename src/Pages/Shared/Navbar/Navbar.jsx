@@ -26,13 +26,34 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            isActive ? "*:underline *:text-primary" : ""
+          }
+        >
+          <p className="text-white">Home</p>
+        </NavLink>
       </li>
-      <li>
-        <NavLink to={"/update-profile"}>Update Profile</NavLink>
+      <li className={`${user ? "hidden" : ""}`}>
+        <NavLink
+          to={"/update-profile"}
+          className={({ isActive }) =>
+            isActive ? "*:underline *:text-primary" : ""
+          }
+        >
+          <p className="text-white">Update Profile</p>
+        </NavLink>
       </li>
-      <li>
-        <NavLink to={"/register"}>Register</NavLink>
+      <li className={`${user ? "hidden" : ""}`}>
+        <NavLink
+          to={"/register"}
+          className={({ isActive }) =>
+            isActive ? "*:underline *:text-primary" : ""
+          }
+        >
+          <p className="text-white">Register</p>
+        </NavLink>
       </li>
     </>
   );
@@ -111,13 +132,13 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="">
                       <div className="avatar online">
                         <div className="w-10 rounded-full">
-                          <img src={avtr} />
+                          <img src={user?.photoURL} />
                         </div>
                       </div>
                     </div>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content z-[3] menu p-2 shadow bg-base-100 rounded-box w-52"
+                      className="dropdown-content z-[3] menu p-2 shadow bg-base-100 rounded-box w-52 text-white"
                     >
                       <li className="block lg:hidden">
                         <p>{user?.displayName}</p>
