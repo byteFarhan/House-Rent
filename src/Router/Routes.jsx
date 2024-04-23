@@ -4,14 +4,13 @@ import Home from "../Pages/HomePage/Home/Home";
 import ApartmentDetails from "../Pages/ApartmentDetails/ApartmentDetails";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: (
-      <div className="text-5xl font-bold text-center">Error 404</div>
-    ),
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
