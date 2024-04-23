@@ -42,7 +42,7 @@ const Login = () => {
         <title>House Rent | Login</title>
       </Helmet>
       <div className="py-6 px-5 md:px-0 lg:bg-[#F3F3F3]">
-        <div className="max-w-[1400px] mx-auto"></div>
+        <div className="max-w-[1280px] mx-auto"></div>
         <div className="min-h-[87vh] hero ">
           <div className=" w-full max-w-[500px] md:px-6 card rounded lg:bg-base-100 bg-[#F3F3F3]">
             <h3 className="text-[#403F3F] text-3xl font-semibold text-center pt-10">

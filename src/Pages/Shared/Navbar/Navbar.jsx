@@ -29,30 +29,30 @@ const Navbar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            isActive ? "*:underline *:text-primary" : ""
+            isActive ? "*:underline *:text-primary *:font-medium" : "text-white"
           }
         >
-          <p className="text-white">Home</p>
+          <p className="text-primary">Home</p>
         </NavLink>
       </li>
-      <li className={`${user ? "hidden" : ""}`}>
+      <li className={`${user ? "" : "hidden"}`}>
         <NavLink
           to={"/update-profile"}
           className={({ isActive }) =>
-            isActive ? "*:underline *:text-primary" : ""
+            isActive ? "*:underline *:text-primary *:font-medium" : "text-white"
           }
         >
-          <p className="text-white">Update Profile</p>
+          <p className="text-primary">Update Profile</p>
         </NavLink>
       </li>
       <li className={`${user ? "hidden" : ""}`}>
         <NavLink
           to={"/register"}
           className={({ isActive }) =>
-            isActive ? "*:underline *:text-primary" : ""
+            isActive ? "*:underline *:text-primary *:font-medium" : "text-white"
           }
         >
-          <p className="text-white">Register</p>
+          <p className="text-primary">Register</p>
         </NavLink>
       </li>
     </>
