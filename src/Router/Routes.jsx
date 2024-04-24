@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/house/:id",
-        element: <ApartmentDetails />,
+        element: (
+          <PrivetRoute>
+            <ApartmentDetails />
+          </PrivetRoute>
+        ),
         loader: () => fetch("/data/apartments.json"),
       },
       {
@@ -32,7 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update-profile",
-        element: <UpdateProfile />,
+        element: (
+          <PrivetRoute>
+            <UpdateProfile />
+          </PrivetRoute>
+        ),
       },
     ],
   },
