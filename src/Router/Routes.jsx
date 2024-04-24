@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         element: (
           <PrivetRoute>
             <UpdateProfile />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/blogs",
+        element: (
+          <PrivetRoute>
+            <Blogs />
           </PrivetRoute>
         ),
       },
