@@ -51,6 +51,7 @@ const router = createBrowserRouter([
             <Blogs />
           </PrivetRoute>
         ),
+        loader: () => fetch("/data/blogs.json"),
       },
     ],
   },
