@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { updateProfile, updateEmail } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 const UpdateProfile = () => {
   const { user, setUser } = useAuth();
   const handleUpdateProfile = (e) => {
@@ -42,7 +43,10 @@ const UpdateProfile = () => {
     //   });
   };
   return (
-    <div>
+    <section>
+      <Helmet>
+        <title>House Rent | Update Profile</title>
+      </Helmet>
       <div className="py-6 px-5 md:px-0 lg:bg-[#F3F3F3]">
         <div className="max-w-[1280px] mx-auto"></div>
         <div className="min-h-[87vh] hero ">
@@ -100,7 +104,7 @@ const UpdateProfile = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
