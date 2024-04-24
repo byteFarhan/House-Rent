@@ -8,30 +8,29 @@ import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { Helmet } from "react-helmet";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
   const [showPassword, setShowPassword] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const {
     createUserWithEmail,
-
+    setUser,
     // updateUserProfile,
   } = useAuth();
-  // console.log(createUserWithEmail);
-  const handleRegistation = (e) => {
-    e.preventDefault();
-    setSuccess("");
-    setError("");
-    // console.log(e.currentTarget);
-    const form = new FormData(e.currentTarget);
-    const name = form.get("name");
-    const photoURL = form.get("photoURL");
-    const email = form.get("email");
-    const password = form.get("password");
-    const isAccept = form.get("terms");
-    // console.log(form, name, email, password, photoURL, isAccept);
+  const onSubmit = (data) => {
+    // console.log(data);
+    const { name, email, password, photoURL } = data;
+
     if (password.length < 6) {
       setError("Password must be longer than 6 characters!");
       return;
@@ -47,25 +46,81 @@ const Register = () => {
     ) {
       setError("Please povide a valid photo URL!");
       return;
-    } else if (!isAccept) {
-      setError("Please accept our terms & conditions!");
-      return;
     }
+
     createUserWithEmail(email, password)
       .then((result) => {
         // console.log(result.user);
-        updateProfile(result.user, { displayName: name, photoURL: photoURL });
-        setSuccess("Registation successfull.");
-        e.target.reset();
-        swal("Registation successfull.", {
-          button: false,
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photoURL,
+        }).then(() => {
+          setUser({ ...result.user, displayName: name, photoURL });
+          setSuccess("Registation successfull.");
+          // e.target.reset();
+          swal("Registation successfull.", {
+            button: false,
+          });
+          navigate("/");
         });
-        navigate("/");
+        // setSuccess("Registation successfull.");
+        //   // e.target.reset();
+        //   swal("Registation successfull.", {
+        //     button: false,
+        //   });
+        //   navigate("/");
       })
       .catch((error) => {
         setError(error.message);
       });
   };
+  // console.log(createUserWithEmail);
+  // const handleRegistation = (e) => {
+  //   e.preventDefault();
+  //   setSuccess("");
+  //   setError("");
+  //   // console.log(e.currentTarget);
+  //   const form = new FormData(e.currentTarget);
+  //   const name = form.get("name");
+  //   const photoURL = form.get("photoURL");
+  //   const email = form.get("email");
+  //   const password = form.get("password");
+  //   const isAccept = form.get("terms");
+  //   // console.log(form, name, email, password, photoURL, isAccept);
+  //   if (password.length < 6) {
+  //     setError("Password must be longer than 6 characters!");
+  //     return;
+  //   } else if (!/[A-Z]/.test(password)) {
+  //     setError("Password should have at least one uppercase character!");
+  //     return;
+  //   } else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/.test(password)) {
+  //     setError("Password should have at least one spacial character!");
+  //     return;
+  //   } else if (
+  //     photoURL &&
+  //     !/\.(jpg|jpeg|png|gif|bmp|svg|webp)$/i.test(photoURL)
+  //   ) {
+  //     setError("Please povide a valid photo URL!");
+  //     return;
+  //   } else if (!isAccept) {
+  //     setError("Please accept our terms & conditions!");
+  //     return;
+  //   }
+  //   createUserWithEmail(email, password)
+  //     .then((result) => {
+  //       // console.log(result.user);
+  //       updateProfile(result.user, { displayName: name, photoURL: photoURL });
+  //       setSuccess("Registation successfull.");
+  //       e.target.reset();
+  //       swal("Registation successfull.", {
+  //         button: false,
+  //       });
+  //       navigate("/");
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //     });
+  // };
 
   return (
     <section>
@@ -80,7 +135,8 @@ const Register = () => {
               Register your account
             </h3>
             <hr className="w-5/6 mx-auto mt-10" />
-            <form onSubmit={handleRegistation} className="pb-0 card-body">
+            <form onSubmit={handleSubmit(onSubmit)} className="pb-0 card-body">
+              {/* <form onSubmit={handleRegistation} className="pb-0 card-body"> */}
               <div className=" form-control">
                 <label className="label">
                   <span className="label-text">Your Name</span>
@@ -90,8 +146,12 @@ const Register = () => {
                   placeholder="Name"
                   name="name"
                   className="rounded input-bordered input lg:bg-[#F3F3F3]"
-                  required
+                  {...register("name", { required: true })}
+                  // required
                 />
+                {errors.name && (
+                  <span className="text-red-600">This field is required</span>
+                )}
               </div>
               <div className=" form-control">
                 <label className="label">
@@ -103,7 +163,11 @@ const Register = () => {
                   name="photoURL"
                   className="rounded input-bordered input lg:bg-[#F3F3F3]"
                   // required
+                  {...register("photoURL", { required: true })}
                 />
+                {errors.photoURL && (
+                  <span className="text-red-600">This field is required</span>
+                )}
               </div>
               <div className=" form-control">
                 <label className="label">
@@ -114,8 +178,12 @@ const Register = () => {
                   placeholder="Email"
                   name="email"
                   className="rounded input-bordered input lg:bg-[#F3F3F3]"
-                  required
+                  {...register("email", { required: true })}
+                  // required
                 />
+                {errors.email && (
+                  <span className="text-red-600">This field is required</span>
+                )}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -127,8 +195,12 @@ const Register = () => {
                     placeholder="Password"
                     name="password"
                     className="input rounded input-bordered w-full lg:bg-[#F3F3F3]"
-                    required
+                    {...register("password", { required: true })}
+                    // required
                   />
+                  {errors.password && (
+                    <span className="text-red-600">This field is required</span>
+                  )}
                   <span
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute top-4 right-3"
